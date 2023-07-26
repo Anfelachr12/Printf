@@ -13,7 +13,9 @@ int print_u(unsigned int num)
 	int count = 0;
 
 	if (num / 10)
+	{
 		count += print_u(num / 10);
+	}
 	count += _putchar((num % 10) + '0');
 
 	return (count);
@@ -30,6 +32,7 @@ int print_u(unsigned int num)
 int print_u_integer(va_list arg)
 {
 	unsigned int n = va_arg(arg, unsigned int);
+
 	return (print_u(n));
 }
 
@@ -155,7 +158,9 @@ int print_hex_upper(va_list arg)
 		while (tran[j] != '\0')
 		{
 			if (j == num)
+			{
 				hex[i] = tran[j];
+			}
 			j++;
 		}
 		i++;
